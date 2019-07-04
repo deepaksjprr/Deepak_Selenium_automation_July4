@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS04_Administration_Campaign_Associated">
+        <methods>
+          <include name="Logout"/>
+          <include name="create_setup_program"/>
+          <include name="flush_report"/>
+          <include name="localBrowserSetUp"/>
+          <include name="LogIn"/>
+          <include name="delete_order_send_swag"/>
+          <include name="verifying_send_swag_with_campaign_association"/>
+          <include name="tearDown"/>
+          <include name="repoting_setup"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS04_Administration_Campaign_Associated -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite2" parallel="methods" thread-count="2">
+  <test name="Suite2Test">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.ParallelExecution"/>
+<!--       <class name="com.pfl.automation.org62.testcases.TS04_Administration_Campaign_Associated"/> -->
+    </classes>
+  </test>
+</suite>

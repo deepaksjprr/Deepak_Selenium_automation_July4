@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RetrySuite">
+
+<listeners>
+	<listener class-name="com.pfl.automation.deepak.rerun.RunTimeFailedTestAnalyzer"/>
+</listeners>
+  
+  <test name="TestCase1">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.RuntimeRetryTest"/>
+    </classes>
+  </test> <!-- Test -->
+   
+</suite> <!-- Suite -->

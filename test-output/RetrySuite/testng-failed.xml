@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [RetrySuite]">
+  <listeners>
+    <listener class-name="com.pfl.automation.deepak.rerun.RunTimeFailedTestAnalyzer"/>
+  </listeners>
+  <test thread-count="5" name="TestCase1(failed)">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.RuntimeRetryTest">
+        <methods>
+          <include name="mytest2"/>
+          <include name="mytest1"/>
+          <include name="mytest3"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.RuntimeRetryTest -->
+    </classes>
+  </test> <!-- TestCase1(failed) -->
+</suite> <!-- Failed suite [RetrySuite] -->

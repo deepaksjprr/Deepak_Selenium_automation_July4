@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+  <parameter name="browser" value="fireFOX"/>
+  
+<!--   <groups>
+  	<run>
+  		<include name = "smoke"/>
+  	</run>
+  </groups> -->
+  
+<!--   <groups>
+  	<dependencies>
+  		<group depends-on="secondm" name="firstm"></group>
+  	
+  	</dependencies>
+  </groups>
+ -->  
+    <classes>
+      <!-- <class name="com.pfl.automation.org62.testcases.TS01_Administration_AssertTiles"/> -->
+<!--       <class name="com.pfl.automation.org62.testcases.TestNGdependency"/> -->
+      <class name="com.pfl.automation.org62.testcases.ParameterizedTestNG"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
+
+

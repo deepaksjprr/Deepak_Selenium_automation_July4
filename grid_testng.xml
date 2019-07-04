@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" name="GridSuite" parallel="true">
+
+  <test thread-count="3" name="GridTest">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS03_lightning"/>
+      <class name="com.pfl.automation.org62.testcases.TS02_Administration_verify_program"/>
+    </classes>
+  </test> <!-- GridTest -->
+  
+  <test thread-count="3" name="GridTest">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS03_lightning"/>
+      <class name="com.pfl.automation.org62.testcases.TS02_Administration_verify_program"/>
+    </classes>
+  </test> <!-- GridTest -->
+  
+</suite> <!-- GridSuite -->

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Suite]">
+  <test name="TestCase5(failed)">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS05_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="TS05_verifying_send_swag_with_multiple_products"/>
+          <include name="TS05_DataSet_Creation"/>
+          <include name="setUp"/>
+          <include name="TS05_DataSet_Reset"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS05_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS03_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS03_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS04_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS04_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS02_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS02_lightning -->
+    </classes>
+  </test> <!-- TestCase5(failed) -->
+  <test name="TestCase4(failed)">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS05_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS05_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS03_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS03_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS04_lightning">
+        <methods>
+          <include name="delete_order_send_swag"/>
+          <include name="LogIn"/>
+          <include name="create_setup_program"/>
+          <include name="setUp"/>
+          <include name="verifying_send_swag_with_campaign_association"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS04_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS02_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS02_lightning -->
+    </classes>
+  </test> <!-- TestCase4(failed) -->
+  <test name="TestCase3(failed)">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS05_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS05_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS03_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+          <include name="TS03_01_verifying_contact_address_send_swag"/>
+          <include name="TS03_02_verifying_account_address_end_swag"/>
+          <include name="TS03_DataReset"/>
+          <include name="TS03_DataSet_Creation"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS03_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS04_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS04_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS02_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS02_lightning -->
+    </classes>
+  </test> <!-- TestCase3(failed) -->
+  <test name="TestCase2(failed)">
+    <classes>
+      <class name="com.pfl.automation.org62.testcases.TS05_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS05_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS03_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS03_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS04_lightning">
+        <methods>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS04_lightning -->
+      <class name="com.pfl.automation.org62.testcases.TS02_lightning">
+        <methods>
+          <include name="TC01"/>
+          <include name="LogIn"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.pfl.automation.org62.testcases.TS02_lightning -->
+    </classes>
+  </test> <!-- TestCase2(failed) -->
+</suite> <!-- Failed suite [Suite] -->
