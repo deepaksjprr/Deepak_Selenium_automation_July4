@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <test thread-count="2" name="Test(failed)" parallel="tests">
-    <parameter name="browserName" value="firefox"/>
-    <classes>
-      <class name="com.pfl.automation.org62.testcases.TS01_Administration_AssertTiles">
-        <methods>
-          <include name="Logout"/>
-          <include name="openBrowserGrid"/>
-          <include name="flush_report"/>
-          <include name="LogIn"/>
-          <include name="TS_01_01_Verify_administration_tiles"/>
-          <include name="tearDown"/>
-          <include name="repoting_setup"/>
-        </methods>
-      </class> <!-- com.pfl.automation.org62.testcases.TS01_Administration_AssertTiles -->
-    </classes>
-  </test> <!-- Test(failed) -->
   <test thread-count="2" name="Test1(failed)" parallel="tests">
     <parameter name="browserName" value="chrome"/>
     <classes>
       <class name="com.pfl.automation.org62.testcases.TS02_Administration_verify_program">
         <methods>
           <include name="Logout"/>
-          <include name="openBrowserGrid"/>
           <include name="flush_report"/>
+          <include name="localBrowserSetUp"/>
           <include name="LogIn"/>
           <include name="tearDown"/>
           <include name="repoting_setup"/>
