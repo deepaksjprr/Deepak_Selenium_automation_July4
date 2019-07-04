@@ -154,139 +154,139 @@ public class BaseTest {
 //	}
 	
 	
-//		@BeforeTest
-//		@Parameters(value = { "browser" })
-//		public void testngBrowserlaunch(String browser) throws FileNotFoundException, IOException, DocumentException {
-//			callBasicConfigFiles();
-//			//String browser = browserName;
-//			//String browser = prop.getProperty("browser");
-//			if (browser.equalsIgnoreCase("chrome")) {
-//				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + Constants.chromeDriverPath);
-//				driver = new ChromeDriver();
-//			} else if (browser.equalsIgnoreCase("firefox")) {
-//				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + Constants.firefoxDriverPath);
-//				driver = new FirefoxDriver();
-//			} else if ((browser.equalsIgnoreCase("edge"))) {
-//				System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + Constants.edgeDriverPath);
-//				driver = new EdgeDriver();
-//			}
-//
-//			driver.manage().window().maximize();
-//			driver.manage().deleteAllCookies();
-//			driver.manage().timeouts().pageLoadTimeout(Constants.PAGE_LOAD_Timeout, TimeUnit.SECONDS);
-//			driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
-//
-//			driver.get(prop.getProperty("url"));
-//			loadPagesObject();
-//		}
+		@BeforeTest
+		//@Parameters(value = { "browser" })
+		public void testngBrowserlaunch() throws FileNotFoundException, IOException, DocumentException {
+			callBasicConfigFiles();
+			//String browser = browserName;
+			String browser = prop.getProperty("browser");
+			if (browser.equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + Constants.chromeDriverPath);
+				driver = new ChromeDriver();
+			} else if (browser.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + Constants.firefoxDriverPath);
+				driver = new FirefoxDriver();
+			} else if ((browser.equalsIgnoreCase("edge"))) {
+				System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + Constants.edgeDriverPath);
+				driver = new EdgeDriver();
+			}
 
-	
-	@BeforeTest
-	@Parameters(value = { "browserName" })
-	public WebDriver localBrowserSetUp(String browserName) throws FileNotFoundException, IOException, DocumentException {
-	//public WebDriver localBrowserSetUp() throws FileNotFoundException, IOException, DocumentException {	
-		callBasicConfigFiles();
-		Log.info("Open Browser Successfully");
-		Reporter.log("Open Browser Successfully");
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().pageLoadTimeout(Constants.PAGE_LOAD_Timeout, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(Constants.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
-		//String browserName = prop.getProperty("browser");
-		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + Constants.chromeDriverPath);
-
-			ChromeOptions chromeOptions = new ChromeOptions();
-
-			chromeOptions.addArguments("start-maximized");
-			chromeOptions.addArguments("--enable-precache");
-			chromeOptions.setCapability("--applicationCacheEnabled", "true");
-			chromeOptions.addArguments("--disable-notifications");
-			chromeOptions.addArguments("--disable-extensions");
-			chromeOptions.addArguments("--disable-geolocation");
-			chromeOptions.addArguments("--ignore-certificate-errors");
-			chromeOptions.addArguments("--no-sandbox");
-			chromeOptions.addArguments("--disable-infobars");
-			chromeOptions.addArguments("--no-default-browser-check");
-			chromeOptions.addArguments("--safebrowsing-disable-auto-update");
-			chromeOptions.setProxy(null);
-			chromeOptions.addArguments("--disable-default-apps");
-			chromeOptions.addArguments("--disable-popup-blocking");
-			chromeOptions.addArguments("--enable-experimental-canvas-features");
-
-			driver = new ChromeDriver(chromeOptions);
-			Log.info("Chrome browser initilized Successfully");
-		} else if (browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + Constants.firefoxDriverPath);
-
-			FirefoxOptions firefoxOptions = new FirefoxOptions();
-
-			firefoxOptions.addArguments("--no-sandbox");
-			firefoxOptions.addArguments("--disable-gpu");
-			firefoxOptions.addArguments("--disable-popup-blocking");
-			firefoxOptions.addArguments("--disable-infobars");
-			firefoxOptions.addArguments("--disable-notifications");
-			firefoxOptions.addArguments("--disable-extensions");
-			firefoxOptions.addArguments("--disable-popup-blocking");
-			firefoxOptions.addArguments("--ignore-certificate-errors");
-			firefoxOptions.addArguments("--safebrowsing-disable-auto-update");
-
-			driver = new FirefoxDriver(firefoxOptions);
-			Log.info("Firefox Browser initilized Successfully");
-		} else if (browserName.equals("IE")) {
-			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + Constants.ieDriverPath);
-			driver = new InternetExplorerDriver();
-			Log.info("IE browser initilized Successfully");
-		} else if (browserName.equals("safari")) {
-			driver = new SafariDriver();
-			Log.info("Edge browser initilized Successfully");
-		} else if (browserName.equals("edge")) {
-			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + Constants.edgeDriverPath);
-			driver = new InternetExplorerDriver();
-			Log.info("IE browser initilized Successfully");
-		} else if (browserName.equals("chromeheadless")) {
-			ChromeOptions chromeOptions = new ChromeOptions();
-			chromeOptions.addArguments("--headless");
-			chromeOptions.addArguments("--no-sandbox");
-			chromeOptions.addArguments("--disable-gpu");
-			chromeOptions.addArguments("--disable-popup-blocking");
-			chromeOptions.addArguments("--window-size=1440,900");
-			chromeOptions.addArguments("--disable-infobars");
-			chromeOptions.addArguments("--disable-notifications");
-			chromeOptions.addArguments("--disable-extensions");
-			chromeOptions.addArguments("--ignore-certificate-errors");
-			chromeOptions.addArguments("--test-type");
-			chromeOptions.addArguments("--safebrowsing-disable-auto-update");
-
-			driver = new ChromeDriver(chromeOptions);
-			Log.info("Chrome Headless Browser initilized Successfully");
-		} else if (browserName.equals("firefoxheadless")) {
-			FirefoxBinary firefoxBinary = new FirefoxBinary();
-			// firefoxBinary.addCommandLineOptions("--headless");
-			System.setProperty("webdriver.gecko.driver", prop.getProperty("geckodriver.exe"));
-			FirefoxOptions firefoxOptions = new FirefoxOptions();
-
-			firefoxOptions.addArguments("--no-sandbox");
-			firefoxOptions.addArguments("--disable-gpu");
-			firefoxOptions.addArguments("--disable-popup-blocking");
-			firefoxOptions.addArguments("--disable-infobars");
-			firefoxOptions.addArguments("--disable-notifications");
-			firefoxOptions.addArguments("--disable-extensions");
-			firefoxOptions.addArguments("--disable-popup-blocking");
-			firefoxOptions.addArguments("--ignore-certificate-errors");
-			firefoxOptions.addArguments("--safebrowsing-disable-auto-update");
-
-			firefoxOptions.setBinary(firefoxBinary);
-			driver = new FirefoxDriver(firefoxOptions);
-			Log.info("Firefox Headless Browser initilized Successfully");
+			driver.get(prop.getProperty("url"));
+			loadPagesObject();
 		}
 
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
-		openURL();
-		loadPagesObject();
-
-		return driver;
-	}
+	
+//	@BeforeTest
+//	@Parameters(value = { "browserName" })
+//	public WebDriver localBrowserSetUp(String browserName) throws FileNotFoundException, IOException, DocumentException {
+//	//public WebDriver localBrowserSetUp() throws FileNotFoundException, IOException, DocumentException {	
+//		callBasicConfigFiles();
+//		Log.info("Open Browser Successfully");
+//		Reporter.log("Open Browser Successfully");
+//
+//		//String browserName = prop.getProperty("browser");
+//		if (browserName.equals("chrome")) {
+//			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + Constants.chromeDriverPath);
+//
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//
+//			chromeOptions.addArguments("start-maximized");
+//			chromeOptions.addArguments("--enable-precache");
+//			chromeOptions.setCapability("--applicationCacheEnabled", "true");
+//			chromeOptions.addArguments("--disable-notifications");
+//			chromeOptions.addArguments("--disable-extensions");
+//			chromeOptions.addArguments("--disable-geolocation");
+//			chromeOptions.addArguments("--ignore-certificate-errors");
+//			chromeOptions.addArguments("--no-sandbox");
+//			chromeOptions.addArguments("--disable-infobars");
+//			chromeOptions.addArguments("--no-default-browser-check");
+//			chromeOptions.addArguments("--safebrowsing-disable-auto-update");
+//			chromeOptions.setProxy(null);
+//			chromeOptions.addArguments("--disable-default-apps");
+//			chromeOptions.addArguments("--disable-popup-blocking");
+//			chromeOptions.addArguments("--enable-experimental-canvas-features");
+//
+//			driver = new ChromeDriver(chromeOptions);
+//			Log.info("Chrome browser initilized Successfully");
+//		} else if (browserName.equals("firefox")) {
+//			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + Constants.firefoxDriverPath);
+//
+//			FirefoxOptions firefoxOptions = new FirefoxOptions();
+//
+//			firefoxOptions.addArguments("--no-sandbox");
+//			firefoxOptions.addArguments("--disable-gpu");
+//			firefoxOptions.addArguments("--disable-popup-blocking");
+//			firefoxOptions.addArguments("--disable-infobars");
+//			firefoxOptions.addArguments("--disable-notifications");
+//			firefoxOptions.addArguments("--disable-extensions");
+//			firefoxOptions.addArguments("--disable-popup-blocking");
+//			firefoxOptions.addArguments("--ignore-certificate-errors");
+//			firefoxOptions.addArguments("--safebrowsing-disable-auto-update");
+//
+//			driver = new FirefoxDriver(firefoxOptions);
+//			Log.info("Firefox Browser initilized Successfully");
+//		} else if (browserName.equals("IE")) {
+//			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + Constants.ieDriverPath);
+//			driver = new InternetExplorerDriver();
+//			Log.info("IE browser initilized Successfully");
+//		} else if (browserName.equals("safari")) {
+//			driver = new SafariDriver();
+//			Log.info("Edge browser initilized Successfully");
+//		} else if (browserName.equals("edge")) {
+//			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir") + Constants.edgeDriverPath);
+//			driver = new InternetExplorerDriver();
+//			Log.info("IE browser initilized Successfully");
+//		} else if (browserName.equals("chromeheadless")) {
+//			ChromeOptions chromeOptions = new ChromeOptions();
+//			chromeOptions.addArguments("--headless");
+//			chromeOptions.addArguments("--no-sandbox");
+//			chromeOptions.addArguments("--disable-gpu");
+//			chromeOptions.addArguments("--disable-popup-blocking");
+//			chromeOptions.addArguments("--window-size=1440,900");
+//			chromeOptions.addArguments("--disable-infobars");
+//			chromeOptions.addArguments("--disable-notifications");
+//			chromeOptions.addArguments("--disable-extensions");
+//			chromeOptions.addArguments("--ignore-certificate-errors");
+//			chromeOptions.addArguments("--test-type");
+//			chromeOptions.addArguments("--safebrowsing-disable-auto-update");
+//
+//			driver = new ChromeDriver(chromeOptions);
+//			Log.info("Chrome Headless Browser initilized Successfully");
+//		} else if (browserName.equals("firefoxheadless")) {
+//			FirefoxBinary firefoxBinary = new FirefoxBinary();
+//			// firefoxBinary.addCommandLineOptions("--headless");
+//			System.setProperty("webdriver.gecko.driver", prop.getProperty("geckodriver.exe"));
+//			FirefoxOptions firefoxOptions = new FirefoxOptions();
+//
+//			firefoxOptions.addArguments("--no-sandbox");
+//			firefoxOptions.addArguments("--disable-gpu");
+//			firefoxOptions.addArguments("--disable-popup-blocking");
+//			firefoxOptions.addArguments("--disable-infobars");
+//			firefoxOptions.addArguments("--disable-notifications");
+//			firefoxOptions.addArguments("--disable-extensions");
+//			firefoxOptions.addArguments("--disable-popup-blocking");
+//			firefoxOptions.addArguments("--ignore-certificate-errors");
+//			firefoxOptions.addArguments("--safebrowsing-disable-auto-update");
+//
+//			firefoxOptions.setBinary(firefoxBinary);
+//			driver = new FirefoxDriver(firefoxOptions);
+//			Log.info("Firefox Headless Browser initilized Successfully");
+//		}
+//
+//		driver.manage().window().maximize();
+//		driver.manage().deleteAllCookies();
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//
+//		openURL();
+//		loadPagesObject();
+//
+//		return driver;
+//	}
 	
 //	@BeforeTest
 //	@Parameters(value= {"browserName"})
