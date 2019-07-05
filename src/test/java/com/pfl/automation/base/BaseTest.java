@@ -555,7 +555,7 @@ public class BaseTest {
 		
 		DeleteLogFile();
 		//DeleteExecutionResult();
-		DeleteScreenshots();
+		//DeleteScreenshots();
 	}
 
 	public WebDriver openBrowser() throws FileNotFoundException, IOException, DocumentException {
