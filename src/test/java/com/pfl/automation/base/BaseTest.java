@@ -554,7 +554,7 @@ public class BaseTest {
 		log4j_config();
 		
 		DeleteLogFile();
-		DeleteExecutionResult();
+		//DeleteExecutionResult();
 		DeleteScreenshots();
 	}
 
