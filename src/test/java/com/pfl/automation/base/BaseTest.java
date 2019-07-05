@@ -362,7 +362,7 @@ public class BaseTest {
 		}
 	
 	
-	@BeforeMethod
+	//@BeforeMethod
 	public void LogIn(ITestResult result) throws Exception {
 		System.out.println("Executing TestCase Name :" + result.getMethod().getMethodName());
 		logger = extent.createTest(result.getMethod().getMethodName());
