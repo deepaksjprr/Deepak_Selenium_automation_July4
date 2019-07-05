@@ -3,7 +3,7 @@
 <suite name="Suite">
   <test name="TestCase4">
     <classes>
-      <class name="com.pfl.automation.org62.testcases.TS02_Administration_Campaign_Associated"/>
+      <class name="com.pfl.automation.org62.testcases.TS02_Administration_verify_program"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

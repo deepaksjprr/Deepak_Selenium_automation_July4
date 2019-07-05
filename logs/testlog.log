@@ -14,3 +14,7 @@
 2019-07-04 19:02:14,928 - com.pfl.automation.utils.Log -INFO - XXXXXXXXXXXXXXXXXXXXXXX             -E---N---D-             XXXXXXXXXXXXXXXXXXXXXX
 2019-07-04 19:02:14,929 - com.pfl.automation.utils.Log -INFO - X
 2019-07-04 19:02:14,929 - com.pfl.automation.utils.Log -INFO - X
+2019-07-05 11:27:36,777 - com.pfl.automation.utils.Log -INFO - Username entered in the Username text box
+2019-07-05 11:27:37,103 - com.pfl.automation.utils.Log -INFO - Password entered in the Username text box
+2019-07-05 11:27:37,103 - com.pfl.automation.utils.Log -INFO - Click action performed on Submit button
+2019-07-05 11:28:54,588 - com.pfl.automation.utils.Log -INFO - Close Browser Successfully
